@@ -1,0 +1,6 @@
+Django
+djangorestframework
+pymongo
+Pygments
+Markdown
+pytz
