@@ -11,7 +11,6 @@ class Maire(models.Model):
     commune = models.CharField(max_length=100, default='Commune inconnu')
     civilite = models.CharField(max_length=3, default='Mme')
 
-
     class Meta:
         ordering = ('id', 'age')
 
