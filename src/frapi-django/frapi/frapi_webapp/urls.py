@@ -8,5 +8,6 @@ urlpatterns = [
     path('frapi/regions/', views.RegionList.as_view()),
     path('frapi/maires/<int:pk>/', views.MaireDetails.as_view()),
     path('frapi/regions/<int:pk>/', views.RegionDetails.as_view()),
+    path('frapi/docs/', views.schema_view)
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)

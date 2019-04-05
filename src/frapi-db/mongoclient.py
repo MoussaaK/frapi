@@ -9,24 +9,30 @@ def main():
     db = client['regions_db']
     collection_regions = db['regions']
 
-    with open('regions.json') as f:
+    with open('../resources/regions.json') as f:
         file_data = json.load(f)
 
     collection_regions.insert_many(file_data)
 
     collection_maires = db['maires']
 
-    with open('maires.json') as f:
+    with open('../resources/maires.json') as f:
         file_data = json.load(f)
 
     collection_maires.insert_many(file_data)
 
     collection_departements = db['departements']
 
-    with open('maires.json') as f:
+    with open('../resources/departments.json') as f:
         file_data = json.load(f)
 
     collection_departements.insert_many(file_data)
+
+    collections = collection_maires.find({})
+    # for collection in collections:
+    #   maire = dict(nom=collection['nompsn'], prenom=collection['prepsn'], situation=collection['libcsp'],
+    #               date_de_naissance=collection['naissance'], age=collection['csp'])
+    #  print(maire)
 
     client.close()
 

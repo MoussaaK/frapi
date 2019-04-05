@@ -18,8 +18,9 @@ services:
       - 8000:8000
     depends_on:
       - db
+    networks:
+      - db_network
   db:
-    image: mongo
     restart: always
     container_name: frapi_mondodb
     build:
@@ -30,4 +31,8 @@ services:
         - https_proxy
     ports:
       - 27017:27017
-      - 28017:28017
+    networks:
+      - db_network
+
+networks:
+  db_network:
